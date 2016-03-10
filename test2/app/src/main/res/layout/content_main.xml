@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="#062E9C"
+    android:fitsSystemWindows="true"
+    android:padding="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="jbk.test2.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        android:typeface="monospace"
+        android:text="public pay"
+        android:singleLine="false"
+        android:id="@+id/text1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:inputType="textPersonName"
+        android:hint="@string/full_name"
+        android:ems="10"
+        android:textColorHint="#ffffff"
+        android:id="@+id/editText1"
+        android:layout_alignTop="@+id/text1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="150dp" />
+
+
+
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:inputType="number"
+        android:hint="@string/adhar_number"
+        android:textSize="20sp"
+        android:textColorHint="#ffffff"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/editText1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="47dp" />
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"
+        android:textSize="20dp"
+        android:textColor="#ffff"
+        android:onClick="sign_in"
+        android:gravity="center"
+        android:background="#010617"
+        android:shadowRadius="@android:integer/config_longAnimTime"
+        android:id="@+id/button"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="47dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/register"
+        android:textSize="15sp"
+        android:onClick="create"
+        android:textAlignment="center"
+        android:text="@string/No_account"
+        android:layout_below="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp" />
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">test2</string>
+    <string name="full_name">full name</string>
+    <string name="adhar_number">adhar number</string>
+    <string name="sign_in">sign in</string>
+    <string name="No_account">No account yet? create one</string>
+    <string name="action_settings">settings</string>
+</resources>
