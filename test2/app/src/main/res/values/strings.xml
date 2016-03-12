@@ -5,4 +5,5 @@
     <string name="sign_in">sign in</string>
     <string name="No_account">No account yet? create one</string>
     <string name="action_settings">settings</string>
+    <string name="title_activity_uniquecode">uniquecode</string>
 </resources>

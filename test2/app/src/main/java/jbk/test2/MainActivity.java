@@ -99,8 +99,12 @@ public class MainActivity extends AppCompatActivity {
                                         String uid_acc = ((EditText)findViewById(R.id.editText2)).getText().toString()
                                                 ,name_acc=((EditText)findViewById(R.id.editText1)).getText().toString();
 
+                                        Intent intent;
                                         if( uid.compareTo(uid_acc)==0 && namee.compareTo(name_acc)==0)
-                                        Toast.makeText(MainActivity.this,"Welcome "+ myparser.getAttributeValue(null, "name"), Toast.LENGTH_SHORT).show();
+                                        {
+                                            intent = new Intent(this, uniquecode.class);
+                                            startActivity(intent);
+                                        }
                                         else
                                             Toast.makeText(MainActivity.this,"ID/Name does not match adhar card", Toast.LENGTH_SHORT).show();
 
