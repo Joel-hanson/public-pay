@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -30,13 +31,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
       //  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
      //   setSupportActionBar(toolbar);
-
+        Firebase.setAndroidContext(this);
        // getSupportActionBar().hide();
-
+        final Firebase myFirebaseRef = new Firebase("https://shoppinglistplus25.firebaseio.com/");
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                String uid_acc = ((EditText)findViewById(R.id.editText2)).getText().toString()
+                        ,name_acc=((EditText)findViewById(R.id.editText3)).getText().toString();
+
+                myFirebaseRef.child("useruid").setValue(uid_acc);
+                myFirebaseRef.child("username").setValue(name_acc);
+
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -53,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-    public void sign_in(View v){
+    public void sign_in(View v)
+    {
         new IntentIntegrator(this).initiateScan();
     }
 
@@ -75,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     //  TextView uno = (TextView) findViewById(R.id.textView1);
                     //  uno.setText(contents);
                     //Toast.makeText(this, "Numero: " + contents, Toast.LENGTH_LONG).show();
-                    Log.d("anik",  contents);
+                    Log.d("joel",  contents);
 
                     try {
                         XmlPullParserFactory xmlFactoryObject = XmlPullParserFactory.newInstance();
@@ -97,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                                             String namee = myparser.getAttributeValue(null,"name");
 
                                         String uid_acc = ((EditText)findViewById(R.id.editText2)).getText().toString()
-                                                ,name_acc=((EditText)findViewById(R.id.editText1)).getText().toString();
+                                                ,name_acc=((EditText)findViewById(R.id.editText3)).getText().toString();
 
                                         Intent intent;
                                         if( uid.compareTo(uid_acc)==0 && namee.compareTo(name_acc)==0)
@@ -108,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                                         else
                                             Toast.makeText(MainActivity.this,"ID/Name does not match adhar card", Toast.LENGTH_SHORT).show();
 
-                                        Log.d("anik", myparser.getAttributeValue(null,"name"));
+                                        Log.d("joel", myparser.getAttributeValue(null,"name"));
                                     }
                                     break;
                             }
